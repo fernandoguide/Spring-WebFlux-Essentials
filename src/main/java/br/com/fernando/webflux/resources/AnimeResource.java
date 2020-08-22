@@ -30,8 +30,7 @@ public class AnimeResource {
     @GetMapping(path = "{id}")
     public Mono<Anime> findById(@PathVariable int id){
         return animeService.findById(id)
-                .switchIfEmpty(monoResponseStatusNotFoundException())
-                .log();
+                .switchIfEmpty(monoResponseStatusNotFoundException());
     }
 
     public <T> Mono<T> monoResponseStatusNotFoundException(){
