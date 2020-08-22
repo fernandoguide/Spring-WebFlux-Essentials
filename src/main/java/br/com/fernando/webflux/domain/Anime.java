@@ -21,8 +21,8 @@ public class Anime {
 
     @Id
     private Integer id;
-    @NotNull
     @NotEmpty(message = "The name of this anime cannot be empty")
+    @NotNull
     private String name;
 
 }
