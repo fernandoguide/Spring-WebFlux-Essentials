@@ -42,6 +42,7 @@ public class AnimeResource {
     public Mono<Void> update(@PathVariable int id ,@Valid @RequestBody Anime anime){
         return animeService.update(anime.withId(id));
     }
+
     @DeleteMapping(path = "{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public Mono<Void> delete(@PathVariable int id) {
